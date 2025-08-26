@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>mitchie ✨</title>
+  <title>commissions • mitchie</title>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     * {
@@ -22,7 +22,7 @@
     }
 
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 2rem;
     }
@@ -39,13 +39,6 @@
       color: #D4DE95;
       margin-bottom: 0.5rem;
       letter-spacing: -0.02em;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .name:hover {
-      transform: scale(1.05);
-      text-shadow: 0 0 20px rgba(212, 222, 149, 0.5);
     }
 
     .tagline {
@@ -78,7 +71,6 @@
       color: #D4DE95;
       border-color: #D4DE95;
       background: rgba(212, 222, 149, 0.1);
-      transform: translateY(-2px);
     }
 
     .nav-link.active {
@@ -112,12 +104,6 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .section-title:hover {
-      transform: translateX(5px);
     }
 
     .section-title::before {
@@ -153,64 +139,116 @@
       border-bottom-color: #D4DE95;
     }
 
-    .social-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
-
-    .social-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: #BAC095;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border: 1px solid rgba(212, 222, 149, 0.3);
-      border-radius: 6px;
-      transition: all 0.3s ease;
-      font-size: 0.9rem;
-    }
-
-    .social-link:hover {
-      color: #D4DE95;
-      border-color: #D4DE95;
-      background: rgba(212, 222, 149, 0.1);
-      transform: translateY(-2px);
-    }
-
-    .favorites {
+    .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
     }
 
-    .favorite-item {
+    .pricing-card {
       background: rgba(212, 222, 149, 0.1);
       border: 1px solid rgba(212, 222, 149, 0.2);
       border-radius: 8px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .pricing-card:hover {
+      background: rgba(212, 222, 149, 0.15);
+      border-color: #D4DE95;
+      transform: translateY(-2px);
+    }
+
+    .pricing-title {
+      font-size: 1.2rem;
+      color: #D4DE95;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .pricing-amount {
+      font-size: 1.5rem;
+      color: #e2e8f0;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .pricing-description {
+      color: #BAC095;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .example-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .example-item {
+      background: rgba(212, 222, 149, 0.05);
+      border: 1px solid rgba(212, 222, 149, 0.2);
+      border-radius: 12px;
       padding: 1rem;
       transition: all 0.3s ease;
       cursor: pointer;
     }
 
-    .favorite-item:hover {
-      background: rgba(212, 222, 149, 0.15);
+    .example-item:hover {
+      background: rgba(212, 222, 149, 0.1);
       border-color: #D4DE95;
-      transform: translateY(-2px) scale(1.02);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(212, 222, 149, 0.2);
     }
 
-    .favorite-label {
-      font-size: 0.9rem;
-      color: #BAC095;
-      margin-bottom: 0.25rem;
+    .example-image {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid rgba(212, 222, 149, 0.3);
+      transition: all 0.3s ease;
+      margin-bottom: 1rem;
     }
 
-    .favorite-value {
-      color: #e2e8f0;
+    .example-image:hover {
+      border-color: #D4DE95;
+      transform: scale(1.02);
+    }
+
+    .example-label {
+      text-align: center;
+      color: #D4DE95;
       font-weight: 500;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+
+    .contact-info {
+      background: rgba(212, 222, 149, 0.1);
+      border: 1px solid rgba(212, 222, 149, 0.2);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .contact-title {
+      font-size: 1.2rem;
+      color: #D4DE95;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .contact-details {
+      color: #BAC095;
+      line-height: 1.6;
+    }
+
+    .discord-handle {
+      color: #D4DE95;
+      font-weight: 500;
+      font-family: 'JetBrains Mono', monospace;
     }
 
     .floating-dots {
@@ -259,60 +297,6 @@
       mix-blend-mode: screen;
     }
 
-    .particle {
-      position: fixed;
-      width: 4px;
-      height: 4px;
-      background: #D4DE95;
-      border-radius: 50%;
-      pointer-events: none;
-      animation: particleFloat 3s ease-out forwards;
-      z-index: 8;
-    }
-
-    @keyframes particleFloat {
-      0% {
-        opacity: 1;
-        transform: translateY(0px) scale(1);
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(-100px) scale(0);
-      }
-    }
-
-    .typing-effect {
-      overflow: hidden;
-      border-right: 2px solid #D4DE95;
-      white-space: nowrap;
-      animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent; }
-      50% { border-color: #D4DE95; }
-    }
-
-    .rainbow-text {
-      background: linear-gradient(45deg, #ff0000, #ff8800, #ffff00, #00ff00, #0088ff, #4400ff, #ff00ff);
-      background-size: 400% 400%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: rainbowShift 2s ease infinite;
-    }
-
-    @keyframes rainbowShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
     @media (max-width: 768px) {
       .container {
         padding: 1rem;
@@ -331,7 +315,7 @@
         padding: 1.5rem;
       }
       
-      .favorites {
+      .pricing-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -354,54 +338,258 @@
 
   <div class="container">
     <header class="header">
-      <h1 class="name" id="name-title">mitchie</h1>
-      <p class="tagline">developer • creator • dreamer</p>
+      <h1 class="name">mitchie</h1>
+      <p class="tagline">pdmm+ module commissions</p>
       <nav class="nav">
-        <a href="index.html" class="nav-link active">about</a>
-        <a href="comms.html" class="nav-link">commissions</a>
+        <a href="index.html" class="nav-link">about</a>
+        <a href="comms.html" class="nav-link active">commissions</a>
       </nav>
     </header>
 
     <main class="content">
       <section class="section">
-        <h2 class="section-title">about me</h2>
+        <h2 class="section-title">services</h2>
         <p class="text">
-          Hi! I'm <span class="highlight">Mitchie</span>, a 16-year-old developer and creator who loves bringing ideas to life through code and art. I'm passionate about <span class="highlight">Project Diva modding</span>, creating custom modules, and exploring the intersection of technology and creativity.
-        </p>
-        <p class="text">
-          When I'm not coding or working on commissions, you can find me enjoying <span class="highlight">Battle for Dream Island</span>, <span class="highlight">Vocaloid music</span>, and discovering new ways to express myself through digital art and programming.
+          I specialize in creating custom <span class="highlight">PDMM+ modules</span> for Project Diva. My work focuses on <span class="highlight">frankenmodules</span> - combining existing Project Diva models to create unique, personalized characters that bring your vision to life.
         </p>
       </section>
 
       <section class="section">
-        <h2 class="section-title">favorites</h2>
-        <div class="favorites">
-          <div class="favorite-item" data-favorite="vocaloid">
-            <div class="favorite-label">vocaloid</div>
-            <div class="favorite-value">Mew</div>
+        <h2 class="section-title">pricing</h2>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <div class="pricing-title">frankenmodules</div>
+            <div class="pricing-amount">$10-$15+ USD</div>
+            <div class="pricing-description">
+              Complete module creation including slotting, rigging, and minor modeling for accessories or hair. Price varies based on complexity.
+            </div>
           </div>
-          <div class="favorite-item" data-favorite="bfdi">
-            <div class="favorite-label">bfdi character</div>
-            <div class="favorite-value">Book</div>
-          </div>
-          <div class="favorite-item" data-favorite="module">
-            <div class="favorite-label">project diva module</div>
-            <div class="favorite-value">Catch the Wave</div>
-          </div>
-          <div class="favorite-item" data-favorite="drag">
-            <div class="favorite-label">drag queen</div>
-            <div class="favorite-value">Lucky Starzz</div>
+          
+          <div class="pricing-card">
+            <div class="pricing-title">model ports</div>
+            <div class="pricing-amount">Free - $2 USD</div>
+            <div class="pricing-description">
+              Usually free for skinwrapping. Small fee ($1-2) for complex projects requiring additional work.
+            </div>
           </div>
         </div>
       </section>
 
       <section class="section">
-        <h2 class="section-title">connect</h2>
-        <div class="social-links">
-          <a href="https://twitter.com/mizitm001" target="_blank" class="social-link">🐦 twitter</a>
-          <a href="https://www.youtube.com/@Miz_Miz_" target="_blank" class="social-link">📺 youtube</a>
-          <a href="https://mizzyitm001.straw.page" target="_blank" class="social-link">🍓 strawpage</a>
-          <a href="https://vgen.co/mizitm001" target="_blank" class="social-link">🧷 vgen</a>
+        <h2 class="section-title">example work</h2>
+        <div class="example-grid">
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/1.jpe" alt="PDMM+ module example 1" class="example-image">
+            <div class="example-label">Digital Stars 2021 Miku</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/3.jpe" alt="PDMM+ module example 3" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/4.jpe" alt="PDMM+ module example 4" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/5.jpe" alt="PDMM+ module example 5" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/6.jpe" alt="PDMM+ module example 6" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/7.jpe" alt="PDMM+ module example 7" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/8.jpe" alt="PDMM+ module example 8" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/9.jpe" alt="PDMM+ module example 9" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/10.jpe" alt="PDMM+ module example 10" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/11.jpe" alt="PDMM+ module example 11" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/12.jpe" alt="PDMM+ module example 12" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/13.jpe" alt="PDMM+ module example 13" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/14.jpe" alt="PDMM+ module example 14" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/15.jpe" alt="PDMM+ module example 15" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/16.jpe" alt="PDMM+ module example 16" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/17.jpe" alt="PDMM+ module example 17" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/18.jpe" alt="PDMM+ module example 18" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/19.jpe" alt="PDMM+ module example 19" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/20.jpe" alt="PDMM+ module example 20" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/21.jpe" alt="PDMM+ module example 21" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/22.jpe" alt="PDMM+ module example 22" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/23.jpe" alt="PDMM+ module example 23" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/24.jpe" alt="PDMM+ module example 24" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/25.jpe" alt="PDMM+ module example 25" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/26.jpe" alt="PDMM+ module example 26" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/27.jpe" alt="PDMM+ module example 27" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/28.jpe" alt="PDMM+ module example 28" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/29.jpe" alt="PDMM+ module example 29" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/30.jpe" alt="PDMM+ module example 30" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/31.jpe" alt="PDMM+ module example 31" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/32.jpe" alt="PDMM+ module example 32" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/33.jpe" alt="PDMM+ module example 33" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/34.jpe" alt="PDMM+ module example 34" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/35.jpe" alt="PDMM+ module example 35" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/36.jpe" alt="PDMM+ module example 36" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/37.jpe" alt="PDMM+ module example 37" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">important notes</h2>
+        <div class="text">
+          <strong>Frankenmodeling Approach:</strong> My modules are created using existing Project Diva models. I may model small accessories or hair modifications, but the core structure uses game assets. This keeps costs affordable while maintaining quality.
+        </div>
+        <div class="text">
+          <strong>Design Matching:</strong> Due to the frankenmodeling approach, modules may not match your reference design exactly. I work to get as close as possible while working within the constraints of available assets.
+        </div>
+        <div class="text">
+          <strong>Manual Modeling:</strong> I do not provide full manual modeling services. If you need completely custom models, I recommend contacting creators like Mekaio, Sangabc, Royer, Nada, and others in the PDM2 or MM+M servers.
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">payment & contact</h2>
+        <div class="contact-info">
+          <div class="contact-title">payment options</div>
+          <div class="contact-details">
+            • PayPal only<br>
+            • Full payment upfront<br>
+            • 50/50 split (half upfront, half on completion)
+          </div>
+        </div>
+        
+        <div class="contact-info">
+          <div class="contact-title">get in touch</div>
+          <div class="contact-details">
+            Ready to start your project? Contact me on Discord:<br>
+            <span class="discord-handle">mitumitu001</span>
+          </div>
         </div>
       </section>
     </main>
@@ -416,8 +604,8 @@
       cursorGlow.style.top = e.clientY - 10 + 'px';
     });
 
-    // Interactive elements
-    const interactiveElements = document.querySelectorAll('.nav-link, .social-link, .favorite-item, .link, .section-title, .name');
+    // Subtle hover effects for interactive elements
+    const interactiveElements = document.querySelectorAll('.nav-link, .pricing-card, .link, .example-image, .example-item');
     
     interactiveElements.forEach(element => {
       element.addEventListener('mouseenter', () => {
@@ -431,1859 +619,9 @@
       });
     });
 
-    // Name title interactions
-    const nameTitle = document.getElementById('name-title');
-    let clickCount = 0;
-    
-    nameTitle.addEventListener('click', () => {
-      clickCount++;
-      
-      if (clickCount === 1) {
-        nameTitle.classList.add('rainbow-text');
-        setTimeout(() => {
-          nameTitle.classList.remove('rainbow-text');
-        }, 3000);
-      } else if (clickCount === 3) {
-        nameTitle.textContent = '✨ mitchie ✨';
-        setTimeout(() => {
-          nameTitle.textContent = 'mitchie';
-        }, 2000);
-        clickCount = 0;
-      }
-      
-      // Create particles
-      for (let i = 0; i < 5; i++) {
-        createParticle(Math.random() * window.innerWidth, Math.random() * window.innerHeight);
-      }
-    });
-
-    // Favorite items interactions
-    document.querySelectorAll('.favorite-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const type = item.getAttribute('data-favorite');
-        const value = item.querySelector('.favorite-value');
-        
-        // Create particles at the item location
-        const rect = item.getBoundingClientRect();
-        for (let i = 0; i < 3; i++) {
-          createParticle(rect.left + Math.random() * rect.width, rect.top + Math.random() * rect.height);
-        }
-        
-        // Add a little bounce effect
-        item.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-          item.style.transform = '';
-        }, 150);
-        
-        // Show what was clicked
-        console.log(`Clicked favorite: ${type} - ${value.textContent}`);
-      });
-    });
-
-    // Section title interactions
-    document.querySelectorAll('.section-title').forEach(title => {
-      title.addEventListener('click', () => {
-        title.style.transform = 'translateX(10px) scale(1.05)';
-        setTimeout(() => {
-          title.style.transform = '';
-        }, 300);
-        
-        // Create particles
-        const rect = title.getBoundingClientRect();
-        createParticle(rect.left, rect.top);
-      });
-    });
-
-    // Particle creation function
-    function createParticle(x, y) {
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      particle.style.left = x + 'px';
-      particle.style.top = y + 'px';
-      particle.style.background = `hsl(${Math.random() * 30 + 80}, 60%, 70%)`;
-      document.body.appendChild(particle);
-      
-      setTimeout(() => particle.remove(), 3000);
-    }
-
-    // Random ambient particles
-    setInterval(() => {
-      if (Math.random() < 0.1) {
-        createParticle(Math.random() * window.innerWidth, window.innerHeight);
-      }
-    }, 2000);
-
-    // Social link interactions
-    document.querySelectorAll('.social-link').forEach(link => {
-      link.addEventListener('click', (e) => {
-        // Create explosion effect
-        const rect = link.getBoundingClientRect();
-        for (let i = 0; i < 8; i++) {
-          setTimeout(() => {
-            createParticle(rect.left + rect.width/2, rect.top + rect.height/2);
-          }, i * 50);
-        }
-      });
-    });
-
     // Console welcome message
-    console.log('%cmitchie', 'color: #D4DE95; font-size: 16px; font-weight: bold;');
+    console.log('%ccomms', 'color: #D4DE95; font-size: 16px; font-weight: bold;');
     console.log('%cyay', 'color: #BAC095; font-size: 14px;');
-    console.log('%cyay', 'color: #BAC095; font-size: 12px;');
-  </script>
-</body>
-</html>      width: 550px;
-      background: linear-gradient(135deg, rgba(25, 15, 45, 0.95), rgba(35, 20, 60, 0.9));
-      backdrop-filter: blur(8px);
-      padding: 25px;
-      height: 100%;
-      border-right: 3px dotted #8B5CF6;
-      box-shadow: 0 0 40px rgba(75, 45, 140, 0.6);
-      overflow-y: auto;
-      overflow-x: hidden;
-      -webkit-overflow-scrolling: touch;
-      overscroll-behavior: contain;
-      transition: transform 0.4s ease;
-      transform: translateX(0);
-    }
-
-    #sidebar.collapsed {
-      transform: translateX(-100%);
-    }
-
-    .sidebar-collapsed #main-content {
-      margin-left: -550px;
-      width: 100vw;
-    }
-
-    #sidebar-toggle {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 10001;
-      padding: 12px 16px;
-      background: linear-gradient(45deg, #7C3AED, #A855F7);
-      border: 2px dotted rgba(240, 232, 255, 0.6);
-      border-radius: 50%;
-      color: white;
-      cursor: pointer;
-      font-size: 1.2rem;
-      box-shadow: 0 4px 20px rgba(124, 58, 237, 0.5);
-      transition: all 0.3s ease;
-    }
-
-    #sidebar-toggle:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 25px rgba(124, 58, 237, 0.7);
-    }
-
-    #sidebar h2 {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 2rem;
-      color: #F3E8FF;
-      text-align: center;
-      margin-bottom: 30px;
-      text-shadow: 2px 2px 4px rgba(67, 56, 202, 0.8);
-      animation: titleBounce 2s ease-in-out infinite;
-    }
-
-    #sidebar-search {
-      width: 100%;
-      padding: 10px 14px;
-      border-radius: 14px;
-      border: 2px dotted rgba(240, 232, 255, 0.6);
-      background: rgba(18, 6, 33, 0.45);
-      color: #EDE9FE;
-      margin-bottom: 14px;
-    }
-
-    .section-title {
-      margin: 16px 0 8px 0;
-      color: #D8B4FE;
-      opacity: 0.95;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      border-bottom: 1px dotted rgba(216, 180, 254, 0.4);
-      padding-bottom: 4px;
-    }
-
-    @keyframes titleBounce {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-
-    #sidebar ul {
-      list-style-type: none;
-    }
-
-    #sidebar li {
-      margin: 18px 0;
-      position: relative;
-    }
-
-    #sidebar li.section-title {
-      margin: 24px 0 12px 0;
-    }
-
-    #sidebar a {
-      display: block;
-      padding: 15px 20px;
-      background: linear-gradient(45deg, #7C3AED, #A855F7);
-      border: 2px dotted rgba(240, 232, 255, 0.6);
-      border-radius: 25px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-      text-align: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
-      position: relative;
-      overflow: hidden;
-    }
-
-    #sidebar a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      transition: left 0.5s;
-    }
-
-    #sidebar a:hover::before {
-      left: 100%;
-    }
-
-    #sidebar a:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 8px 25px rgba(124, 58, 237, 0.6);
-      background: linear-gradient(45deg, #8B5CF6, #C084FC);
-    }
-
-    #sidebar a:active {
-      transform: translateY(-2px) scale(0.98);
-    }
-
-    #main-content {
-      flex-grow: 1;
-      padding: 40px;
-      color: #E5D9FF;
-      overflow-y: auto;
-      background: linear-gradient(135deg, rgba(15, 8, 30, 0.85), rgba(12, 5, 25, 0.75));
-      backdrop-filter: blur(5px);
-      position: relative;
-      transition: all 0.4s ease;
-      margin-left: 0;
-      width: calc(100% - 550px);
-    }
-
-    #main-content h1 {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 3rem;
-      color: #C7B7FF;
-      text-align: center;
-      margin-bottom: 20px;
-      text-shadow: 3px 3px 6px rgba(139, 92, 246, 0.3);
-      animation: rainbow-text 3s ease-in-out infinite alternate;
-    }
-
-    @keyframes rainbow-text {
-      0% { color: #6B46C1; }
-      25% { color: #7C3AED; }
-      50% { color: #8B5CF6; }
-      75% { color: #A855F7; }
-      100% { color: #C084FC; }
-    }
-
-    .entry {
-      background: linear-gradient(135deg, rgba(45, 25, 70, 0.7), rgba(35, 18, 55, 0.6));
-      padding: 25px;
-      margin-bottom: 20px;
-      border-radius: 20px;
-      border: 2px dotted #9B59B6;
-      box-shadow: 0 8px 32px rgba(75, 45, 140, 0.3);
-      font-size: 1.1rem;
-      line-height: 1.6;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      color: #E5D9FF;
-    }
-
-    .entry:hover {
-      transform: scale(1.02);
-      box-shadow: 0 12px 40px rgba(139, 92, 246, 0.4);
-      border-color: #C084FC;
-    }
-
-
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-
-
-    h3 {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1.5rem;
-      color: #C7B7FF;
-      text-align: center;
-      margin: 25px 0 15px 0;
-      text-shadow: 1px 1px 3px rgba(139, 92, 246, 0.3);
-    }
-
-
-
-    /* Secret purple button */
-    #secret-purple {
-      background: transparent;
-      border: none;
-      color: transparent;
-      cursor: pointer;
-      padding: 10px;
-      user-select: none;
-      transition: all 0.3s ease;
-    }
-
-    #secret-purple:hover {
-      color: #DDD6FE;
-      background: rgba(139, 92, 246, 0.2);
-      border-radius: 10px;
-    }
-
-    /* Purple rain effect */
-    .purple-drop {
-      position: absolute;
-      width: 2px;
-      height: 10px;
-      background: linear-gradient(to bottom, #C084FC, transparent);
-      animation: purpleRain 2s linear infinite;
-      pointer-events: none;
-    }
-
-    @keyframes purpleRain {
-      0% { transform: translateY(-100vh); opacity: 1; }
-      100% { transform: translateY(100vh); opacity: 0; }
-    }
-
-    /* Fun bounce animation for the whole page */
-    .page-bounce {
-      animation: pageBounce 0.6s ease-in-out;
-    }
-
-    @keyframes pageBounce {
-      0%, 100% { transform: scale(1); }
-      25% { transform: scale(0.95) rotate(-1deg); }
-      50% { transform: scale(1.02) rotate(1deg); }
-      75% { transform: scale(0.98) rotate(-0.5deg); }
-    }
-
-    /* Floating purple characters */
-    .floating-char {
-      position: fixed;
-      font-size: 2rem;
-      color: #A855F7;
-      pointer-events: none;
-      animation: floatChar 4s ease-in-out infinite;
-      z-index: 5;
-    }
-
-    @keyframes floatChar {
-      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
-      25% { transform: translateY(-10px) rotate(5deg); opacity: 1; }
-      50% { transform: translateY(-20px) rotate(-5deg); opacity: 0.8; }
-      75% { transform: translateY(-10px) rotate(3deg); opacity: 1; }
-    }
-
-    /* Responsive design */
-    @media (max-width: 768px) {
-      #main-container { flex-direction: column; }
-      #sidebar { width: 100%; height: auto; }
-      #main-content { padding: 20px; }
-      #main-content h1 { font-size: 2rem; }
-    }
-
-    /* Tab System */
-    .tab-button {
-      display: block;
-      width: 100%;
-      padding: 15px 20px;
-      background: linear-gradient(45deg, #7C3AED, #A855F7);
-      border: 2px dotted rgba(240, 232, 255, 0.6);
-      border-radius: 25px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-      text-align: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .tab-button:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 8px 25px rgba(124, 58, 237, 0.6);
-      background: linear-gradient(45deg, #8B5CF6, #C084FC);
-    }
-
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    /* Fun Buttons */
-    .fun-button-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .fun-btn {
-      padding: 8px 12px;
-      background: linear-gradient(45deg, #7C3AED, #A855F7);
-      border: 2px dotted rgba(240, 232, 255, 0.6);
-      border-radius: 15px;
-      color: white;
-      font-weight: bold;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 10px rgba(124, 58, 237, 0.4);
-    }
-
-    .fun-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.6);
-      background: linear-gradient(45deg, #8B5CF6, #C084FC);
-    }
-
-    /* Floating Images */
-    .floating-img {
-    position: fixed;
-      width: 60px;
-      height: 60px;
-      object-fit: contain;
-      pointer-events: none;
-      animation: floatImg 6s ease-in-out infinite;
-      z-index: 5;
-      opacity: 0.8;
-      filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.5));
-    }
-
-    @keyframes floatImg {
-      0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
-      25% { transform: translateY(-15px) rotate(5deg) scale(1.1); }
-      50% { transform: translateY(-30px) rotate(-5deg) scale(0.9); }
-      75% { transform: translateY(-15px) rotate(3deg) scale(1.05); }
-    }
-
-    .floating-img:hover {
-      animation-play-state: paused;
-      transform: scale(1.5) rotate(10deg);
-      transition: all 0.3s ease;
-    }
-
-    /* Party Mode Effects */
-    .party-mode {
-      animation: partyRotate 0.5s ease-in-out infinite alternate;
-    }
-
-    @keyframes partyRotate {
-      0% { transform: rotate(-2deg); }
-      100% { transform: rotate(2deg); }
-    }
-
-    /* Rainbow Mode */
-    .rainbow-mode {
-      background: linear-gradient(45deg, #ff0000, #ff8800, #ffff00, #00ff00, #0088ff, #4400ff, #ff00ff) !important;
-      background-size: 400% 400% !important;
-      animation: rainbowShift 1s ease infinite !important;
-    }
-
-    @keyframes rainbowShift {
-      0% { background-position: 0% 50%; filter: hue-rotate(0deg); }
-      50% { background-position: 100% 50%; filter: hue-rotate(180deg); }
-      100% { background-position: 0% 50%; filter: hue-rotate(360deg); }
-    }
-
-    /* Chaos Mode */
-    .chaos-mode {
-      animation: chaosShake 0.1s ease-in-out infinite;
-    }
-
-    @keyframes chaosShake {
-      0% { transform: translate(0px, 0px) rotate(0deg); }
-      25% { transform: translate(2px, -2px) rotate(1deg); }
-      50% { transform: translate(-1px, 2px) rotate(-1deg); }
-      75% { transform: translate(-3px, 1px) rotate(0.5deg); }
-      100% { transform: translate(1px, -1px) rotate(-0.5deg); }
-    }
-
-    /* Zen Mode */
-    .zen-mode {
-      filter: blur(0px) brightness(1.2) saturate(1.5);
-      animation: zenGlow 3s ease-in-out infinite;
-    }
-
-    @keyframes zenGlow {
-      0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
-      50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.8), 0 0 60px rgba(196, 142, 253, 0.5); }
-    }
-
-    /* Disco Mode */
-    .disco-mode {
-      animation: discoFlash 0.3s ease-in-out infinite alternate;
-    }
-
-    @keyframes discoFlash {
-      0% { 
-        background: linear-gradient(45deg, #ff0080, #8000ff) !important;
-        transform: scale(1);
-      }
-      100% { 
-        background: linear-gradient(45deg, #00ff80, #ff8000) !important;
-        transform: scale(1.02);
-      }
-    }
-
-    /* Click Effects */
-    .click-effect {
-      position: fixed;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: radial-gradient(circle, #C084FC, transparent);
-      pointer-events: none;
-      animation: clickExpand 0.6s ease-out forwards;
-      z-index: 9999;
-    }
-
-    @keyframes clickExpand {
-      0% {
-        transform: scale(0);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(4);
-        opacity: 0;
-      }
-    }
-
-    /* Particle System */
-    .particle {
-      position: fixed;
-      width: 4px;
-      height: 4px;
-      background: #C084FC;
-      border-radius: 50%;
-      pointer-events: none;
-      animation: particleFloat 3s ease-out forwards;
-      z-index: 8;
-    }
-
-    @keyframes particleFloat {
-      0% {
-        opacity: 1;
-        transform: translateY(0px) scale(1);
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(-100px) scale(0);
-      }
-    }
-
-    /* Sound Wave Effect */
-    .sound-wave {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .wave {
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #C084FC, transparent);
-      animation: waveMove 2s ease-in-out infinite;
-    }
-
-    @keyframes waveMove {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-
-    /* Emoji Rain */
-    .emoji-drop {
-    position: fixed;
-      top: -40px;
-      font-size: 24px;
-      pointer-events: none;
-      animation: emojiFall linear forwards;
-      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
-      z-index: 6;
-    }
-
-    @keyframes emojiFall {
-      to { transform: translateY(110vh) rotate(360deg); opacity: 0.9; }
-    }
-
-    /* Star Catcher */
-    .star-game-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 100000;
-    }
-
-    .star-game-box {
-      width: min(520px, 92vw);
-      background: linear-gradient(135deg, #F5F3FF, #EDE9FE);
-      border: 2px solid #C084FC;
-      border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(139,92,246,0.5);
-      padding: 12px;
-    }
-
-    .star-game-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 6px 8px;
-      font-family: 'Fredoka One', cursive;
-      color: #6B46C1;
-    }
-
-    .star-field {
-      position: relative;
-      height: 320px;
-      background: radial-gradient(circle at 50% 0%, rgba(192,132,252,0.25), rgba(192,132,252,0.1));
-      border-radius: 12px;
-      overflow: hidden;
-      border: 2px dashed #C084FC;
-    }
-
-    .click-star {
-      position: absolute;
-      font-size: 24px;
-      cursor: pointer;
-    user-select: none;
-      transition: transform 0.2s ease;
-    }
-
-    .click-star:active { transform: scale(0.9); }
-
-    .star-score {
-    display: flex;
-    justify-content: space-between;
-      padding: 6px 8px;
-      font-weight: bold;
-      color: #7C3AED;
-    }
-
-    .game-btn {
-      padding: 8px 12px;
-      background: linear-gradient(45deg, #7C3AED, #A855F7);
-      color: #fff;
-      border: 2px dotted rgba(240, 232, 255, 0.6);
-      border-radius: 10px;
-    cursor: pointer;
-      box-shadow: 0 2px 10px rgba(124,58,237,0.4);
-    }
-
-    /* Toast */
-    .mini-toast {
-    position: fixed;
-    bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(31, 41, 55, 0.9);
-      color: #fff;
-      padding: 10px 14px;
-      border-radius: 999px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
-      font-weight: bold;
-      z-index: 100001;
-    }
-
-    /* Accessible dotted outlines */
-    *:focus-visible {
-      outline: 2px dotted #C084FC;
-      outline-offset: 2px;
-    }
-
-    /* Ensure emoji rain is above content */
-    .emoji-drop { z-index: 100000 !important; }
-
-    /* Knick-knacks and tchotchkes */
-    .knickknack {
-      position: fixed;
-      pointer-events: none;
-      z-index: 7;
-      opacity: 0.8;
-      filter: drop-shadow(0 2px 8px rgba(139, 92, 246, 0.4));
-    }
-
-    .knick-1 { top: 5%; left: 45%; font-size: 18px; animation: floatChar 5s ease-in-out infinite; animation-delay: 0s; }
-    .knick-2 { top: 15%; left: 75%; font-size: 22px; animation: floatChar 4s ease-in-out infinite; animation-delay: 0.5s; }
-    .knick-3 { top: 25%; left: 25%; font-size: 16px; animation: floatChar 6s ease-in-out infinite; animation-delay: 1s; }
-    .knick-4 { top: 35%; left: 85%; font-size: 20px; animation: floatChar 4.5s ease-in-out infinite; animation-delay: 1.5s; }
-    .knick-5 { top: 45%; left: 15%; font-size: 24px; animation: floatChar 5.5s ease-in-out infinite; animation-delay: 2s; }
-    .knick-6 { top: 55%; left: 65%; font-size: 18px; animation: floatChar 4.2s ease-in-out infinite; animation-delay: 2.5s; }
-    .knick-7 { top: 65%; left: 35%; font-size: 22px; animation: floatChar 5.8s ease-in-out infinite; animation-delay: 3s; }
-    .knick-8 { top: 75%; left: 80%; font-size: 19px; animation: floatChar 4.7s ease-in-out infinite; animation-delay: 3.5s; }
-    .knick-9 { top: 85%; left: 20%; font-size: 21px; animation: floatChar 5.2s ease-in-out infinite; animation-delay: 4s; }
-    .knick-10 { top: 12%; left: 55%; font-size: 17px; animation: floatChar 6.2s ease-in-out infinite; animation-delay: 4.5s; }
-    .knick-11 { top: 22%; left: 95%; font-size: 23px; animation: floatChar 4.8s ease-in-out infinite; animation-delay: 5s; }
-    .knick-12 { top: 42%; left: 5%; font-size: 20px; animation: floatChar 5.7s ease-in-out infinite; animation-delay: 0.2s; }
-    .knick-13 { top: 62%; left: 75%; font-size: 18px; animation: floatChar 4.4s ease-in-out infinite; animation-delay: 0.7s; }
-    .knick-14 { top: 82%; left: 45%; font-size: 22px; animation: floatChar 5.9s ease-in-out infinite; animation-delay: 1.2s; }
-    .knick-15 { top: 92%; left: 85%; font-size: 19px; animation: floatChar 4.6s ease-in-out infinite; animation-delay: 1.7s; }
-
-    .knickknack:hover {
-      transform: scale(1.3) rotate(20deg);
-      transition: all 0.3s ease;
-      pointer-events: auto;
-      cursor: pointer;
-    }
-
-    /* Gravity Mode */
-    .gravity-mode * {
-      transition: none !important;
-      animation: gravityFall 3s ease-in forwards !important;
-    }
-
-    @keyframes gravityFall {
-      0% { transform: translateY(0) rotate(0deg); }
-      100% { transform: translateY(150vh) rotate(720deg); }
-    }
-
-    /* More fun decorative elements */
-    .corner-widget {
-      position: fixed;
-      z-index: 10002;
-      padding: 8px;
-      background: rgba(124, 58, 237, 0.3);
-      border: 1px dotted #C084FC;
-      border-radius: 8px;
-      font-size: 12px;
-      color: #E5D9FF;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      pointer-events: auto;
-    }
-
-    .corner-widget:hover {
-      background: rgba(124, 58, 237, 0.6);
-      transform: scale(1.1);
-    }
-
-    #clock-widget { bottom: 20px; right: 20px; }
-    #weather-widget { bottom: 70px; right: 20px; }
-    #fortune-widget { bottom: 120px; right: 20px; }
-
-    /* Pulse elements */
-    .pulse-element {
-      position: fixed;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(196, 142, 253, 0.6), transparent);
-      animation: pulse 2s ease-in-out infinite;
-      pointer-events: none;
-      z-index: 6;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.6; }
-      50% { transform: scale(1.5); opacity: 1; }
-    }
-
-    /* SVG Filter effects */
-    .turbulence-mode { filter: url(#turbulence); }
-    .glow-mode { filter: url(#glow); }
-    .pixelate-mode { filter: url(#pixelate); }
-    .vintage-mode { filter: url(#vintage); }
-    .neon-mode { filter: url(#neon); }
-    .crystalline-mode { filter: url(#crystalline); }
-    .hologram-mode { filter: url(#hologram); }
-
-    @keyframes turbulenceWave {
-      0% { transform: scale(1) rotate(0deg); }
-      25% { transform: scale(1.02) rotate(1deg); }
-      50% { transform: scale(0.98) rotate(-1deg); }
-      75% { transform: scale(1.01) rotate(0.5deg); }
-      100% { transform: scale(1) rotate(0deg); }
-    }
-
-    @keyframes glowPulse {
-      0%, 100% { filter: url(#glow) brightness(1); }
-      50% { filter: url(#glow) brightness(1.3); }
-    }
-
-    @keyframes holoFlicker {
-      0%, 90%, 100% { opacity: 1; }
-      91%, 99% { opacity: 0.8; }
-    }
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: rgba(196, 142, 253, 0.2);
-      border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: linear-gradient(45deg, #8B5CF6, #C084FC);
-      border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: linear-gradient(45deg, #7C3AED, #A855F7);
-  }
-</style>
-</head>
-<body>
-  <!-- Floating bubbles -->
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-  <div class="bubble"></div>
-
-  <!-- Floating characters -->
-  <div class="floating-char" style="top: 10%; left: 15%; animation-delay: 0s;">💜</div>
-  <div class="floating-char" style="top: 20%; left: 80%; animation-delay: 1s;">✨</div>
-  <div class="floating-char" style="top: 70%; left: 10%; animation-delay: 2s;">🔮</div>
-  <div class="floating-char" style="top: 60%; left: 85%; animation-delay: 3s;">💫</div>
-
-  <!-- Knick-knacks and tchotchkes -->
-  <div class="knickknack knick-1">🏺</div>
-  <div class="knickknack knick-2">🎭</div>
-  <div class="knickknack knick-3">🪞</div>
-  <div class="knickknack knick-4">🕯️</div>
-  <div class="knickknack knick-5">🎪</div>
-  <div class="knickknack knick-6">🎨</div>
-  <div class="knickknack knick-7">🎲</div>
-  <div class="knickknack knick-8">🔔</div>
-  <div class="knickknack knick-9">🎵</div>
-  <div class="knickknack knick-10">🏮</div>
-  <div class="knickknack knick-11">🎠</div>
-  <div class="knickknack knick-12">🪄</div>
-  <div class="knickknack knick-13">🎯</div>
-  <div class="knickknack knick-14">🧸</div>
-  <div class="knickknack knick-15">🎊</div>
-  <!-- Galaxy starfield canvas -->
-  <canvas id="star-canvas" style="position:fixed;inset:0;z-index:0;pointer-events:none;"></canvas>
-
-  <!-- SVG filters for effects -->
-  <svg style="position: absolute; width: 0; height: 0;" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <filter id="turbulence" x="0%" y="0%" width="100%" height="100%">
-        <feTurbulence baseFrequency="0.02" numOctaves="3" result="noise" seed="1">
-          <animate attributeName="baseFrequency" values="0.02;0.05;0.02" dur="3s" repeatCount="indefinite"/>
-        </feTurbulence>
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="20">
-          <animate attributeName="scale" values="20;50;20" dur="2s" repeatCount="indefinite"/>
-        </feDisplacementMap>
-      </filter>
-      
-      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
-        <feMerge> 
-          <feMergeNode in="coloredBlur"/>
-          <feMergeNode in="SourceGraphic"/>
-        </feMerge>
-      </filter>
-      
-      <filter id="pixelate" x="0%" y="0%" width="100%" height="100%">
-        <feFlood flood-color="#7C3AED" result="flood"/>
-        <feComposite in="flood" in2="SourceGraphic" operator="screen"/>
-        <feMorphology operator="dilate" radius="2"/>
-        <feGaussianBlur stdDeviation="1"/>
-      </filter>
-      
-      <filter id="vintage" x="0%" y="0%" width="100%" height="100%">
-        <feColorMatrix type="matrix" values="1.2 0.3 0.1 0 0.1
-                                           0.2 1.1 0.3 0 0.1
-                                           0.1 0.2 0.8 0 0.2
-                                           0 0 0 1 0"/>
-        <feGaussianBlur stdDeviation="0.5"/>
-      </filter>
-      
-      <filter id="neon" x="-50%" y="-50%" width="200%" height="200%">
-        <feFlood flood-color="#FF00FF" result="neon1"/>
-        <feFlood flood-color="#00FFFF" result="neon2"/>
-        <feGaussianBlur in="neon1" stdDeviation="3" result="glow1"/>
-        <feGaussianBlur in="neon2" stdDeviation="5" result="glow2"/>
-        <feMerge>
-          <feMergeNode in="glow1"/>
-          <feMergeNode in="glow2"/>
-          <feMergeNode in="SourceGraphic"/>
-        </feMerge>
-      </filter>
-      
-      <filter id="crystalline" x="0%" y="0%" width="100%" height="100%">
-        <feTurbulence baseFrequency="0.9" numOctaves="4" result="noise"/>
-        <feColorMatrix in="noise" type="saturate" values="0"/>
-        <feComponentTransfer>
-          <feFuncA type="discrete" tableValues="0 .5 .5 .7 .7 .8 1"/>
-        </feComponentTransfer>
-        <feComposite in="SourceGraphic" in2="noise" operator="multiply"/>
-      </filter>
-      
-      <filter id="hologram" x="0%" y="0%" width="100%" height="100%">
-        <feOffset in="SourceGraphic" dx="2" dy="0" result="red"/>
-        <feOffset in="SourceGraphic" dx="-2" dy="0" result="blue"/>
-        <feColorMatrix in="red" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.7 0"/>
-        <feColorMatrix in="blue" type="matrix" values="0 0 0 0 0  0 0 1 0 0  0 0 1 0 0  0 0 0 0.7 0" result="blueShift"/>
-        <feMerge>
-          <feMergeNode in="red"/>
-          <feMergeNode in="blueShift"/>
-          <feMergeNode in="SourceGraphic"/>
-        </feMerge>
-      </filter>
-    </defs>
-  </svg>
-
-  <!-- Sidebar toggle button -->
-  <button id="sidebar-toggle">☰</button>
-
-  <!-- Corner widgets -->
-  <div id="clock-widget" class="corner-widget">🕐 00:00</div>
-  <div id="weather-widget" class="corner-widget">🌙 Dreamy</div>
-  <div id="fortune-widget" class="corner-widget">🔮 Click me!</div>
-
-  <!-- Pulse elements -->
-  <div class="pulse-element" style="top: 30%; left: 60%;"></div>
-  <div class="pulse-element" style="top: 70%; left: 30%;"></div>
-  <div class="pulse-element" style="top: 50%; left: 80%;"></div>
-
-  <!-- Floating Images -->
-  <div class="floating-images">
-    <img class="floating-img" src="images/angryluka.png" style="top: 15%; left: 5%; animation-delay: 0s;" alt="Angry Luka">
-    <img class="floating-img" src="images/hatsunekuchi.png" style="top: 25%; left: 90%; animation-delay: 1.5s;" alt="Hatsune Kuchi">
-    <img class="floating-img" src="images/dumb.png" style="top: 55%; left: 8%; animation-delay: 3s;" alt="Dumb">
-    <img class="floating-img" src="images/hatsuneleek.png" style="top: 40%; left: 88%; animation-delay: 2.5s;" alt="Hatsune Leek">
-    <img class="floating-img" src="images/fanny.png" style="top: 75%; left: 92%; animation-delay: 4s;" alt="Fanny">
-    <img class="floating-img" src="images/pearto.png" style="top: 80%; left: 5%; animation-delay: 5s;" alt="Pearto">
-    <img class="floating-img" src="images/yummy.png" style="top: 35%; left: 3%; animation-delay: 1s;" alt="Yummy">
-  </div>
-
-  <!-- Click Effects Container -->
-  <div id="click-effects"></div>
-
-  <!-- Particle System Container -->
-  <div id="particle-system"></div>
-
-  <div id="main-container">
-  <div id="sidebar">
-      <h2>💜 miz's links 💜</h2>
-            <input id="sidebar-search" placeholder="Filter links & buttons..." aria-label="Filter sidebar" />
-      <ul>
-        <li class="section-title">🌐 Social Links</li>
-        <li>
-          <a href="https://www.youtube.com/@Miz_Miz_" target="_blank">🎬 YouTube</a>
-        </li>
-        <li>
-          <a href="https://twitter.com/mizitm001" target="_blank">🐦 Twitter</a>
-        </li>
-        <li>
-          <a href="https://www.roblox.com/users/2030316580/profile" target="_blank">🎮 Roblox</a>
-        </li>
-        <li>
-          <a href="https://mizzyitm001.straw.page" target="_blank">🍓 strawpage</a>
-        </li>
-        <li>
-          <button id="discord-copy" class="tab-button">🗨️ Discord: @mizitm001 (copy)</button>
-        </li>
-        
-        <li class="section-title">💼 Commission Services</li>
-        <li>
-          <a href="https://vgen.co/mizitm001" target="_blank">🧷 VGen (Book)</a>
-        </li>
-        <li>
-          <button id="commissions-tab" class="tab-button">⭐ Commissions Info</button>
-        </li>
-        
-        <li class="section-title">📄 Site Navigation</li>
-        <li>
-          <button id="about-tab" class="tab-button">💜 About Me</button>
-        </li>
-        <li>
-          <button id="secret-purple">🔮 a magical secret?</button>
-        </li>
-      </ul>
-
-      <!-- Fun Silly Buttons Section -->
-      <div id="fun-buttons">
-        <h3 style="color: #F3E8FF; margin: 20px 0 15px 0; font-size: 1.2rem;">🎪 Fun Zone! 🎪</h3>
-                <div class="fun-button-grid" id="fun-grid">
-          <!-- Always visible core buttons -->
-          <button id="reset-mode" class="fun-btn">🔄 Reset</button>
-          <!-- All other buttons will be randomly selected -->
-        </div>
-      </div>
-    </div>
-
-  <div id="main-content">
-      <!-- About Me Tab Content -->
-      <div id="about-content" class="tab-content active">
-        <h1>✨ About miz! ✨</h1>
-        <p style="text-align: center; font-size: 1.2rem; color: #7C3AED; margin-bottom: 30px;">:P :D :0 :X xD</p>
-
-        <h3>💜 ✨ 🔮 ✨ 💜</h3>
-    <div class="entry">
-          Hi there!! I am Miz!!  I am 16 years old! ✨ I'm like Project Diva Modding, Battle for Dream Island, RuPaul's Drag Race, Dress to Impress, Vocaloid, Coding and Touhou!! 🎵 Check out my Project Diva module commissions in the commissions tab!
-    </div>
-
-        <h3>🌟 my favorite things! 🌟</h3>
-    <div class="entry">
-          Here are my . Ilike them<br><br>
-          💜 <strong>Favorite Vocaloid:</strong> Mew<br>
-          👑 <strong>Favorite Drag Queen:</strong>Lucky Starzz<br>
-          📚 <strong>Favorite BFDI Character:</strong> Book<br>
-          🌊 <strong>Favorite Project Diva Module:</strong> Catch the Wave
-    </div>
-
-        <h3>yayyy</h3>
-        <div class="entry">
-         this site got a massive update... plz enjoy i was making this for a long time
-    </div>
-
-        <h3>💫 secret purple mysteries 💫</h3>
-    <div class="entry">
-          there are secrets on this page too yayy
-      </div>
-      </div>
-
-      <!-- Commissions Tab Content -->
-      <div id="commissions-content" class="tab-content">
-        <h1>⭐ PDMM+ Module Commissions ⭐</h1>
-        <p style="text-align: center; font-size: 1.2rem; color: #7C3AED; margin-bottom: 30px;">Professional Project Diva modules with a touch of purple magic! ✨</p>
-        <div style="text-align:center; margin-bottom:20px;">
-          <a href="https://vgen.co/mizitm001" target="_blank" class="tab-button" style="display:inline-block; width:auto; padding:12px 18px;">🧷 Book on VGen</a>
-        </div>
-
-        <h3>💜 What I Specialize In 💜</h3>
-    <div class="entry">
-          I create custom <strong>PDMM+ modules</strong> for Project Diva! i do <strong>frankenmodules</strong> - combining existing Project Diva models to create something completely new and unique!
-    </div>
-
-        <h3>🎨 Commission Services 🎨</h3>
-        <div class="entry">
-          <strong>Frankenmodules:</strong> $10-15 USD depending on complexity<br>
-          <strong>Model Ports:</strong> Usually free for skinwrapping (small fee for complex projects)<br>
-          <strong>Full Service:</strong> Complete slotting, rigging, and technical implementation<br>
-        </div>
-
-        <h3>💰 Pricing & Payment 💰</h3>
-        <div class="entry">
-          <strong>Frankenmodules:</strong> $10-15 USD based on complexity<br>
-          <strong>Model Ports:</strong> Usually free, small fee for complex work<br>
-          <strong>Payment Method:</strong> PayPal only (message me for details)<br>
-          <strong>Payment Options:</strong><br>
-          &nbsp;&nbsp;• Full payment upfront<br>
-          &nbsp;&nbsp;• 50/50 split (half upfront, half on completion)<br>
-          &nbsp;&nbsp;• art trades :D
-        </div>
-
-        <h3>🚀 How to Commission 🚀</h3>
-        <div class="entry">
-          Ready to bring your vision to life? 🌟<br><br>
-          <strong>Check out my work:</strong> <a href="https://mizitm001.carrd.co" target="_blank" style="color: #8B5CF6; text-decoration: underline;">mizitm001.carrd.co</a><br>
-          <strong>Contact me:</strong> Twitter @mizitm001 or through my strawpage<br>
-          <strong>Include:</strong> Character references, specific requests<br>
-        </div>
-
-        <h3>yay</h3>
-        <div class="entry">
-          yay ^_^
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- Star Catcher Game Overlay -->
-  <div id="star-game" class="star-game-overlay" style="display:none;">
-    <div class="star-game-box">
-      <div class="star-game-header">
-        <span>⭐ Star Catcher</span>
-        <button id="star-game-close" class="game-btn">✖</button>
-      </div>
-      <div class="star-score">
-        <span>Score: <strong id="star-score">0</strong></span>
-        <span>Time: <strong id="star-time">20</strong>s</span>
-      </div>
-      <div id="star-field" class="star-field"></div>
-      <div style="text-align:center; margin-top:10px;">
-        <button id="star-game-start" class="game-btn">▶ Start</button>
-        <button id="star-game-again" class="game-btn" style="display:none;">↻ Play Again</button>
-      </div>
-    </div>
-  </div>
-  <!-- Toast Notification -->
-  <div id="toast" class="mini-toast" style="display:none;"></div>
-
-  <script>
-    // Starfield background
-    (function(){
-      const canvas = document.getElementById('star-canvas');
-      const ctx = canvas.getContext('2d');
-      function resize(){ canvas.width = innerWidth; canvas.height = innerHeight; }
-      addEventListener('resize', resize); resize();
-      const stars = Array.from({length: 500}).map(() => ({
-        x: Math.random()*canvas.width,
-        y: Math.random()*canvas.height,
-        r: Math.random()*3+0.8,
-        a: Math.random()*Math.PI*2,
-        s: Math.random()*0.03+0.01
-      }));
-      function draw(){
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-        for(const st of stars){
-          st.a += st.s; const tw = (Math.sin(st.a)+1)/2; // 0..1
-          ctx.beginPath();
-          ctx.fillStyle = `rgba(240,220,255,${0.4 + tw*0.6})`;
-          ctx.shadowColor = '#C084FC';
-          ctx.shadowBlur = 6 + tw*16;
-          ctx.arc(st.x, st.y, st.r, 0, Math.PI*2);
-          ctx.fill();
-        }
-        ctx.shadowBlur = 0;
-        requestAnimationFrame(draw);
-      }
-      draw();
-    })();
-    // Purple rain effect
-    function createPurpleRain() {
-      const drop = document.createElement('div');
-      drop.className = 'purple-drop';
-      drop.style.left = Math.random() * 100 + '%';
-      drop.style.animationDuration = (Math.random() * 2 + 1) + 's';
-      document.body.appendChild(drop);
-      
-      setTimeout(() => {
-        drop.remove();
-      }, 3000);
-    }
-
-    // Create purple rain every 200ms
-    setInterval(createPurpleRain, 200);
-
-    // Secret purple button functionality
-    const secretBtn = document.getElementById('secret-purple');
-    if (secretBtn) secretBtn.addEventListener('click', function() {
-      // Page bounce effect
-      document.body.classList.add('page-bounce');
-      
-      // Create purple explosion effect
-      for (let i = 0; i < 20; i++) {
-        setTimeout(() => {
-          const explosion = document.createElement('div');
-          explosion.style.position = 'fixed';
-          explosion.style.left = Math.random() * 100 + '%';
-          explosion.style.top = Math.random() * 100 + '%';
-          explosion.style.fontSize = '2rem';
-          explosion.style.color = '#C084FC';
-          explosion.style.pointerEvents = 'none';
-          explosion.style.zIndex = '9999';
-          explosion.textContent = ['💜', '✨', '🔮', '💫', '⭐'][Math.floor(Math.random() * 5)];
-          explosion.style.animation = 'floatChar 2s ease-out forwards';
-          document.body.appendChild(explosion);
-          
-          setTimeout(() => explosion.remove(), 2000);
-        }, i * 50);
-      }
-      
-      setTimeout(() => {
-        document.body.classList.remove('page-bounce');
-      }, 600);
-    });
-
-
-
-
-
-    // Random purple sparkles on mouse movement
-    let sparkleTimeout;
-    document.addEventListener('mousemove', function(e) {
-      clearTimeout(sparkleTimeout);
-      sparkleTimeout = setTimeout(() => {
-        if (Math.random() < 0.1) { // 10% chance
-          const sparkle = document.createElement('div');
-          sparkle.style.position = 'fixed';
-          sparkle.style.left = e.clientX + 'px';
-          sparkle.style.top = e.clientY + 'px';
-          sparkle.style.fontSize = '1rem';
-          sparkle.style.color = '#C084FC';
-          sparkle.style.pointerEvents = 'none';
-          sparkle.style.zIndex = '9999';
-          sparkle.textContent = '✨';
-          sparkle.style.animation = 'floatChar 1s ease-out forwards';
-          document.body.appendChild(sparkle);
-          
-          setTimeout(() => sparkle.remove(), 1000);
-        }
-      }, 50);
-    });
-
-    // Tab System
-    function showTab(tabName) {
-      // Hide all tab contents
-      document.querySelectorAll('.tab-content').forEach(tab => {
-        tab.classList.remove('active');
-      });
-      
-      // Show selected tab
-      document.getElementById(tabName + '-content').classList.add('active');
-    }
-
-    // Tab button events
-    document.getElementById('about-tab').addEventListener('click', () => showTab('about'));
-    document.getElementById('commissions-tab').addEventListener('click', () => showTab('commissions'));
-
-    // Fun Button Effects
-    let currentMode = null;
-    let modeInterval = null;
-
-    function clearModes() {
-      document.body.classList.remove('party-mode', 'rainbow-mode', 'chaos-mode', 'zen-mode', 'disco-mode');
-      if (modeInterval) {
-        clearInterval(modeInterval);
-        modeInterval = null;
-      }
-      currentMode = null;
-    }
-
-    // Reset Mode (always available)
-    document.getElementById('reset-mode').addEventListener('click', function() {
-      clearModes();
-      document.body.style.filter = '';
-      document.querySelectorAll('.floating-img').forEach(img => {
-        img.style.animation = 'floatImg 6s ease-in-out infinite';
-      });
-    });
-
-    // Particle Creation Functions
-    function createParticle(x, y) {
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      particle.style.left = x + 'px';
-      particle.style.top = y + 'px';
-      particle.style.background = `hsl(${Math.random() * 60 + 280}, 70%, 70%)`;
-      document.getElementById('particle-system').appendChild(particle);
-      
-      setTimeout(() => particle.remove(), 3000);
-    }
-
-    function createColoredParticle(x, y, color) {
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      particle.style.left = x + 'px';
-      particle.style.top = y + 'px';
-      particle.style.background = color;
-      particle.style.boxShadow = `0 0 10px ${color}`;
-      document.getElementById('particle-system').appendChild(particle);
-      
-      setTimeout(() => particle.remove(), 3000);
-    }
-
-    function createZenParticle(x, y) {
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      particle.style.left = x + 'px';
-      particle.style.top = y + 'px';
-      particle.style.background = 'rgba(196, 142, 253, 0.6)';
-      particle.style.animation = 'particleFloat 6s ease-out forwards';
-      particle.style.boxShadow = '0 0 20px rgba(196, 142, 253, 0.8)';
-      document.getElementById('particle-system').appendChild(particle);
-      
-      setTimeout(() => particle.remove(), 6000);
-    }
-
-    function createExplosion(x, y) {
-      for (let i = 0; i < 10; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = (x + (Math.random() - 0.5) * 100) + 'px';
-        particle.style.top = (y + (Math.random() - 0.5) * 100) + 'px';
-        particle.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
-        particle.style.animation = 'particleFloat 1s ease-out forwards';
-        document.getElementById('particle-system').appendChild(particle);
-        
-        setTimeout(() => particle.remove(), 1000);
-      }
-    }
-
-    function createSoundWave() {
-      const soundWave = document.createElement('div');
-      soundWave.className = 'sound-wave';
-      
-      for (let i = 0; i < 5; i++) {
-        const wave = document.createElement('div');
-        wave.className = 'wave';
-        wave.style.top = (20 + i * 100) + 'px';
-        wave.style.animationDelay = (i * 0.2) + 's';
-        soundWave.appendChild(wave);
-      }
-      
-      document.body.appendChild(soundWave);
-      setTimeout(() => soundWave.remove(), 2000);
-    }
-
-    // Click Effects
-    document.addEventListener('click', function(e) {
-      const clickEffect = document.createElement('div');
-      clickEffect.className = 'click-effect';
-      clickEffect.style.left = (e.clientX - 10) + 'px';
-      clickEffect.style.top = (e.clientY - 10) + 'px';
-      document.getElementById('click-effects').appendChild(clickEffect);
-      
-      setTimeout(() => clickEffect.remove(), 600);
-      
-      // Random chance for bonus effects
-      if (Math.random() < 0.1) {
-        createExplosion(e.clientX, e.clientY);
-      }
-    });
-
-    // Make floating images clickable for extra fun
-    document.querySelectorAll('.floating-img').forEach(img => {
-      img.style.pointerEvents = 'auto';
-      img.style.cursor = 'pointer';
-      
-      img.addEventListener('click', function(e) {
-        e.stopPropagation();
-        
-        // Spin effect
-        this.style.animation = 'none';
-        this.style.transform = 'scale(1.5) rotate(720deg)';
-        this.style.transition = 'all 1s ease';
-        
-        // Create explosion at image location
-        const rect = this.getBoundingClientRect();
-        createExplosion(rect.left + rect.width/2, rect.top + rect.height/2);
-        
-        // Reset after animation
-        setTimeout(() => {
-          this.style.animation = 'floatImg 6s ease-in-out infinite';
-          this.style.transform = '';
-          this.style.transition = '';
-        }, 1000);
-      });
-    });
-
-
-
-    // Konami code easter egg
-    let konamiCode = [];
-    const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
-    
-    document.addEventListener('keydown', function(e) {
-      konamiCode.push(e.code);
-      if (konamiCode.length > konamiSequence.length) {
-        konamiCode.shift();
-      }
-      
-      if (JSON.stringify(konamiCode) === JSON.stringify(konamiSequence)) {
-        // Super secret mode activated!
-        alert('🎉 SUPER SECRET PURPLE MODE ACTIVATED! 🎉');
-        document.body.style.animation = 'purpleGradient 0.1s ease infinite';
-        
-        // Create chaos everywhere
-        for (let i = 0; i < 50; i++) {
-          setTimeout(() => {
-            createExplosion(Math.random() * window.innerWidth, Math.random() * window.innerHeight);
-          }, i * 100);
-        }
-        
-        konamiCode = [];
-      }
-    });
-
-    // Random ambient effects
-    setInterval(() => {
-      if (!currentMode && Math.random() < 0.05) {
-        createParticle(Math.random() * window.innerWidth, Math.random() * window.innerHeight);
-      }
-    }, 1000);
-
-    // Sidebar quick filter
-    const filterInput = document.getElementById('sidebar-search');
-    if (filterInput) {
-      const sideList = filterInput.nextElementSibling;
-      filterInput.addEventListener('input', () => {
-        const q = filterInput.value.toLowerCase();
-        sideList.querySelectorAll('li').forEach(li => {
-          const text = li.textContent?.toLowerCase() || '';
-          li.style.display = text.includes(q) ? '' : 'none';
-        });
-      });
-    }
-
-    // All possible fun buttons (only 2 random will be shown each load)
-    const allFunButtons = [
-      { id: 'party-mode', label: '🎉 Party Mode', fn: () => {
-        clearModes(); currentMode = 'party'; document.body.classList.add('party-mode');
-        modeInterval = setInterval(() => {
-          createParticle(Math.random() * window.innerWidth, Math.random() * window.innerHeight);
-          createParticle(Math.random() * window.innerWidth, Math.random() * window.innerHeight);
-          createParticle(Math.random() * window.innerWidth, Math.random() * window.innerHeight);
-        }, 200);
-        createSoundWave();
-      }},
-      { id: 'rainbow-mode', label: '🌈 Rainbow', fn: () => {
-        clearModes(); currentMode = 'rainbow'; document.body.classList.add('rainbow-mode');
-        modeInterval = setInterval(() => {
-          const colors = ['#ff0000', '#ff8800', '#ffff00', '#00ff00', '#0088ff', '#4400ff', '#ff00ff'];
-          for (let i = 0; i < 5; i++) {
-            createColoredParticle(Math.random() * window.innerWidth, Math.random() * window.innerHeight, colors[Math.floor(Math.random() * colors.length)]);
-          }
-        }, 150);
-      }},
-      { id: 'chaos-mode', label: '💥 Chaos', fn: () => {
-        clearModes(); currentMode = 'chaos'; document.body.classList.add('chaos-mode');
-        modeInterval = setInterval(() => {
-          for (let i = 0; i < 3; i++) {
-            createExplosion(Math.random() * window.innerWidth, Math.random() * window.innerHeight);
-          }
-          document.querySelectorAll('.floating-img').forEach(img => {
-            img.style.animation = 'chaosShake 0.1s ease-in-out infinite';
-          });
-        }, 100);
-      }},
-
-      { id: 'disco-mode', label: '🕺 Disco', fn: () => {
-        clearModes(); currentMode = 'disco'; document.body.classList.add('disco-mode');
-        modeInterval = setInterval(() => {
-          const discoColors = ['#ff0080', '#8000ff', '#00ff80', '#ff8000', '#0080ff', '#ff4000'];
-          for (let i = 0; i < 8; i++) {
-            createColoredParticle(Math.random() * window.innerWidth, Math.random() * window.innerHeight, discoColors[Math.floor(Math.random() * discoColors.length)]);
-          }
-          document.body.style.filter = Math.random() > 0.5 ? 'brightness(1.5)' : 'brightness(0.7)';
-          setTimeout(() => document.body.style.filter = 'brightness(1)', 100);
-        }, 200);
-      }},
-
-      { id: 'sparkle-paint', label: '🎨 Sparkle Paint', fn: () => {
-        painting = !painting;
-        showToast(painting ? 'Sparkle Paint: ON' : 'Sparkle Paint: OFF');
-      }},
-      { id: 'star-catcher', label: '⭐ Star Catcher', fn: () => {
-        document.getElementById('star-game').style.display = 'flex'; 
-        resetStarGame();
-      }},
-      { id: 'gravity-mode', label: '🌍 Gravity Mode', fn: () => {
-        showToast('Gravity activated! Everything falls!');
-        document.body.classList.add('gravity-mode');
-        setTimeout(() => {
-          document.body.classList.remove('gravity-mode');
-          showToast('Gravity disabled - elements restored!');
-        }, 4000);
-      }},
-      { id: 'roll-luck', label: '🎲 Roll Luck', fn: () => showToast('Luck: ' + (1 + (Math.random()*100|0))) },
-      { id: 'boop', label: '🎵 Boop', fn: () => { createSoundWave(); showToast('boop!'); } },
-      { id: 'nebula-burst', label: '🌌 Nebula Burst', fn: () => { 
-        showToast('Nebula explosion!');
-        for(let i=0;i<20;i++){ 
-          setTimeout(() => createExplosion(Math.random()*window.innerWidth, Math.random()*window.innerHeight), i*60); 
-        } 
-      }},
-      { id: 'shuffle-colors', label: '🪄 Shuffle Colors', fn: () => { 
-        showToast('Colors shuffled!');
-        document.body.style.filter = `hue-rotate(${Math.random()*360}deg)`; 
-        setTimeout(() => document.body.style.filter='', 1500); 
-      }},
-      { id: 'spawn-blob', label: '👾 Spawn Blob', fn: () => spawnPetBlob() },
-
-      { id: 'lightning', label: '⚡ Lightning', fn: () => { 
-        showToast('Lightning strike!');
-        document.body.style.filter='brightness(3)'; 
-        setTimeout(() => document.body.style.filter='', 100); 
-        createExplosion(window.innerWidth/2, window.innerHeight/2); 
-      }},
-      { id: 'spin-page', label: '🌀 Spin Page', fn: () => { 
-        showToast('Page spinning!');
-        document.body.style.transition = 'transform 1s ease-in-out';
-        document.body.style.transform = 'rotate(360deg)'; 
-        setTimeout(() => {
-          document.body.style.transform = 'rotate(0deg)'; 
-          setTimeout(() => {
-            document.body.style.transition = '';
-            showToast('Spin complete!');
-          }, 1000);
-        }, 1000); 
-      }},
-      { id: 'time-freeze', label: '⏰ Time Freeze', fn: () => {
-        showToast('Time frozen for 3 seconds!');
-        const allAnimated = document.querySelectorAll('*');
-        allAnimated.forEach(el => {
-          el.style.animationPlayState = 'paused';
-        });
-        setTimeout(() => {
-          allAnimated.forEach(el => {
-            el.style.animationPlayState = 'running';
-          });
-          showToast('Time resumed!');
-        }, 3000);
-      }},
-      { id: 'mirror-mode', label: '🪞 Mirror Mode', fn: () => {
-        showToast('Mirror dimension activated!');
-        document.body.style.transform = 'scaleX(-1)';
-        setTimeout(() => {
-          document.body.style.transform = '';
-          showToast('Back to normal dimension!');
-        }, 3000);
-      }},
-      { id: 'turbulence-mode', label: '🌀 Turbulence', fn: () => {
-        if (document.body.classList.contains('turbulence-mode')) {
-          document.body.classList.remove('turbulence-mode');
-          document.body.style.animation = 'purpleGradient 14s ease infinite, zenGlow 3s ease-in-out infinite';
-          showToast('Turbulence disabled!');
-        } else {
-          clearModes();
-          document.body.classList.add('turbulence-mode');
-          document.body.style.animation = 'purpleGradient 14s ease infinite, zenGlow 3s ease-in-out infinite, turbulenceWave 1.5s ease-in-out infinite';
-          showToast('Reality is warping! 🌀');
-        }
-      }},
-      { id: 'glow-mode', label: '✨ Glow', fn: () => {
-        if (document.body.classList.contains('glow-mode')) {
-          document.body.classList.remove('glow-mode');
-          document.body.style.animation = 'purpleGradient 14s ease infinite, zenGlow 3s ease-in-out infinite';
-          showToast('Glow disabled!');
-        } else {
-          clearModes();
-          document.body.classList.add('glow-mode');
-          document.body.style.animation = 'purpleGradient 14s ease infinite, zenGlow 3s ease-in-out infinite, glowPulse 2s ease-in-out infinite';
-          showToast('Everything glows! ✨');
-        }
-      }},
-      { id: 'pixelate-mode', label: '🎮 Pixelate', fn: () => {
-        if (document.body.classList.contains('pixelate-mode')) {
-          document.body.classList.remove('pixelate-mode');
-          showToast('Pixels restored!');
-        } else {
-          clearModes();
-          document.body.classList.add('pixelate-mode');
-          showToast('Welcome to the matrix! 🎮');
-        }
-      }},
-      { id: 'vintage-mode', label: '📺 Vintage', fn: () => {
-        if (document.body.classList.contains('vintage-mode')) {
-          document.body.classList.remove('vintage-mode');
-          showToast('Back to the future!');
-        } else {
-          clearModes();
-          document.body.classList.add('vintage-mode');
-          showToast('Groovy retro vibes! 📺');
-        }
-      }},
-      { id: 'neon-mode', label: '🌈 Neon', fn: () => {
-        if (document.body.classList.contains('neon-mode')) {
-          document.body.classList.remove('neon-mode');
-          showToast('Neon off!');
-        } else {
-          clearModes();
-          document.body.classList.add('neon-mode');
-          showToast('Neon city activated! 🌈');
-        }
-      }},
-      { id: 'crystalline-mode', label: '💎 Crystal', fn: () => {
-        if (document.body.classList.contains('crystalline-mode')) {
-          document.body.classList.remove('crystalline-mode');
-          showToast('Crystal dissolved!');
-        } else {
-          clearModes();
-          document.body.classList.add('crystalline-mode');
-          showToast('Crystalline dimension! 💎');
-        }
-      }},
-      { id: 'hologram-mode', label: '👻 Hologram', fn: () => {
-        if (document.body.classList.contains('hologram-mode')) {
-          document.body.classList.remove('hologram-mode');
-          document.body.style.animation = 'purpleGradient 14s ease infinite, zenGlow 3s ease-in-out infinite';
-          showToast('Hologram disabled!');
-        } else {
-          clearModes();
-          document.body.classList.add('hologram-mode');
-          document.body.style.animation = 'purpleGradient 14s ease infinite, zenGlow 3s ease-in-out infinite, holoFlicker 0.1s ease-in-out infinite';
-          showToast('Holographic projection! 👻');
-        }
-      }}
-    ];
-    
-    function shuffleArray(arr) {
-      const shuffled = [...arr];
-      for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-      }
-      return shuffled;
-    }
-    
-    function insertRandomButtons(){
-      const funGrid = document.getElementById('fun-grid');
-      if(!funGrid) return;
-      
-      // Randomly pick 2 buttons from all available
-      const shuffled = shuffleArray(allFunButtons);
-      const selectedButtons = shuffled.slice(0, 2);
-      
-      selectedButtons.forEach(button => {
-        const btn = document.createElement('button');
-        btn.className = 'fun-btn';
-        btn.id = button.id;
-        btn.textContent = button.label;
-        btn.addEventListener('click', button.fn);
-        funGrid.appendChild(btn);
-      });
-    }
-    insertRandomButtons();
-
-    // Pet blob
-    function spawnPetBlob(){
-      const blob = document.createElement('div');
-      blob.style.position = 'fixed';
-      blob.style.width = '60px';
-      blob.style.height = '60px';
-      blob.style.borderRadius = '50%';
-      blob.style.left = (innerWidth*0.7) + 'px';
-      blob.style.top = (innerHeight*0.7) + 'px';
-      blob.style.background = 'radial-gradient(circle at 30% 30%, #C084FC, #7C3AED)';
-      blob.style.boxShadow = '0 6px 20px rgba(124,58,237,0.4)';
-      blob.style.zIndex = '1000';
-      blob.style.cursor = 'grab';
-      blob.title = 'drag me!';
-      document.body.appendChild(blob);
-      let dragging=false, dx=0, dy=0;
-      blob.addEventListener('mousedown', e=>{ dragging=true; dx=e.clientX-blob.offsetLeft; dy=e.clientY-blob.offsetTop; blob.style.cursor='grabbing'; });
-      addEventListener('mouseup', ()=>{ dragging=false; blob.style.cursor='grab'; });
-      addEventListener('mousemove', e=>{ if(!dragging) return; blob.style.left=(e.clientX-dx)+'px'; blob.style.top=(e.clientY-dy)+'px'; });
-      blob.addEventListener('click', ()=>{ showToast('blorb!'); createExplosion(blob.offsetLeft+30, blob.offsetTop+30); });
-      setTimeout(()=> blob.remove(), 20000);
-    }
-
-    // Discord copy
-    const toast = document.getElementById('toast');
-    function showToast(message) {
-      toast.textContent = message;
-      toast.style.display = 'block';
-      setTimeout(() => toast.style.display = 'none', 1500);
-    }
-
-    // Global variables for fun buttons
-    let emojiRainInterval = null;
-    let painting = false;
-    const emojiSet = ['💜','✨','🔮','💫','⭐','🌟','🎵','🦄','🎀','🎭','🪄','🌈','💎','🎪','🎨'];
-
-    document.getElementById('discord-copy')?.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText('@mizitm001');
-        showToast('Copied Discord: @mizitm001');
-      } catch(e) {
-        showToast('Copy failed, try manually: @mizitm001');
-      }
-    });
-
-    // Sparkle Paint mouse movement handler
-    document.addEventListener('mousemove', (e) => {
-      if (!painting) return;
-      const s = document.createElement('div');
-      s.style.position = 'fixed';
-      s.style.left = e.clientX + 'px';
-      s.style.top = e.clientY + 'px';
-      s.style.fontSize = (Math.random()*10 + 12) + 'px';
-      s.style.pointerEvents = 'none';
-      s.style.color = '#C084FC';
-      s.style.zIndex = '9999';
-      s.textContent = emojiSet[Math.floor(Math.random()*emojiSet.length)];
-      s.style.animation = 'floatChar 1.2s ease-out forwards';
-      document.body.appendChild(s);
-      setTimeout(() => s.remove(), 1200);
-    });
-
-    // Star Catcher Mini-game
-    const starBtn = document.getElementById('star-catcher-btn');
-    const starGame = document.getElementById('star-game');
-    const starField = document.getElementById('star-field');
-    const starScoreEl = document.getElementById('star-score');
-    const starTimeEl = document.getElementById('star-time');
-    const starStart = document.getElementById('star-game-start');
-    const starAgain = document.getElementById('star-game-again');
-    const starClose = document.getElementById('star-game-close');
-
-    let starScore = 0;
-    let starTime = 20;
-    let starTimer = null;
-    let starSpawnTimer = null;
-
-    starBtn?.addEventListener('click', () => {
-      starGame.style.display = 'flex';
-      resetStarGame();
-    });
-    starClose.addEventListener('click', () => { starGame.style.display = 'none'; stopStarGame(); });
-    starAgain.addEventListener('click', () => { resetStarGame(); startStarGame(); });
-    starStart.addEventListener('click', () => startStarGame());
-
-    function resetStarGame(){
-      starScore = 0; starTime = 20;
-      starScoreEl.textContent = '0';
-      starTimeEl.textContent = '20';
-      starField.innerHTML = '';
-      starStart.style.display = 'inline-block';
-      starAgain.style.display = 'none';
-    }
-    function stopStarGame(){
-      clearInterval(starTimer); starTimer = null;
-      clearInterval(starSpawnTimer); starSpawnTimer = null;
-    }
-    function startStarGame(){
-      stopStarGame();
-      starStart.style.display = 'none';
-      starAgain.style.display = 'none';
-      starTimer = setInterval(() => {
-        starTime--;
-        starTimeEl.textContent = String(starTime);
-        if (starTime <= 0){
-          endStarGame();
-        }
-      }, 1000);
-      starSpawnTimer = setInterval(spawnStar, 500);
-    }
-    function endStarGame(){
-      stopStarGame();
-      showToast('Your score: ' + starScore + ' ⭐');
-      starAgain.style.display = 'inline-block';
-    }
-    function spawnStar(){
-      const star = document.createElement('div');
-      star.className = 'click-star';
-      star.textContent = Math.random() < 0.15 ? '💎' : '⭐';
-      const x = Math.random() * (starField.clientWidth - 30);
-      const y = Math.random() * (starField.clientHeight - 30);
-      star.style.left = x + 'px';
-      star.style.top = y + 'px';
-      starField.appendChild(star);
-      const value = star.textContent === '💎' ? 3 : 1;
-      star.addEventListener('click', () => {
-        starScore += value;
-        starScoreEl.textContent = String(starScore);
-        star.remove();
-      });
-      setTimeout(() => star.remove(), 1200);
-    }
-
-    // Knick-knack interactions
-    document.querySelectorAll('.knickknack').forEach((knick, index) => {
-      knick.style.pointerEvents = 'auto';
-      knick.addEventListener('click', () => {
-        const effects = [
-          () => { showToast('Ancient vase discovered! 🏺'); createExplosion(knick.offsetLeft, knick.offsetTop); },
-          () => { showToast('Drama mask activated! 🎭'); document.body.style.filter = 'sepia(1)'; setTimeout(() => document.body.style.filter = '', 2000); },
-          () => { showToast('Mirror reflects your soul! 🪞'); for(let i=0;i<5;i++) createParticle(knick.offsetLeft, knick.offsetTop); },
-          () => { showToast('Candle lit! 🕯️'); knick.style.filter = 'brightness(2) drop-shadow(0 0 20px orange)'; setTimeout(() => knick.style.filter = '', 3000); },
-          () => { showToast('Circus tent opened! 🎪'); createSoundWave(); },
-          () => { showToast('Paint palette splashed! 🎨'); document.body.style.animation += ', rainbowShift 2s ease'; setTimeout(() => location.reload(), 2000); },
-          () => { showToast('Lucky dice rolled: ' + (Math.random()*6+1|0) + '! 🎲'); },
-          () => { showToast('Bell chimed! 🔔'); knick.style.animation = 'none'; knick.style.transform = 'rotate(360deg)'; setTimeout(() => knick.style.animation = knick.style.transform = '', 1000); },
-          () => { showToast('Music note played! 🎵'); createColoredParticle(knick.offsetLeft, knick.offsetTop, '#FFD700'); },
-          () => { showToast('Lantern glows! 🏮'); knick.style.boxShadow = '0 0 30px #FF6B6B'; setTimeout(() => knick.style.boxShadow = '', 2000); },
-          () => { showToast('Carousel spins! 🎠'); knick.style.animation = 'spin 2s linear'; setTimeout(() => knick.style.animation = '', 2000); },
-          () => { showToast('Magic wand cast spell! 🪄'); for(let i=0;i<10;i++) setTimeout(() => createParticle(Math.random()*innerWidth, Math.random()*innerHeight), i*100); },
-          () => { showToast('Bullseye hit! 🎯'); createExplosion(innerWidth/2, innerHeight/2); },
-          () => { showToast('Teddy bear hugged! 🧸'); knick.style.transform = 'scale(1.5)'; setTimeout(() => knick.style.transform = '', 1000); },
-          () => { showToast('Confetti burst! 🎊'); for(let i=0;i<15;i++) createColoredParticle(knick.offsetLeft + Math.random()*100-50, knick.offsetTop + Math.random()*100-50, ['#FF69B4', '#00CED1', '#FFD700', '#FF6347'][Math.random()*4|0]); }
-        ];
-        effects[index]();
-      });
-    });
-
-    // Sidebar toggle functionality
-    document.getElementById('sidebar-toggle').addEventListener('click', () => {
-      const sidebar = document.getElementById('sidebar');
-      const body = document.body;
-      sidebar.classList.toggle('collapsed');
-      body.classList.toggle('sidebar-collapsed');
-      showToast(sidebar.classList.contains('collapsed') ? 'Sidebar hidden' : 'Sidebar shown');
-    });
-
-    // Corner widget functionality
-    document.getElementById('clock-widget').addEventListener('click', () => {
-      const now = new Date();
-      const time = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-      document.getElementById('clock-widget').innerHTML = `🕐 ${time}`;
-      showToast('Clock updated!');
-    });
-
-    document.getElementById('weather-widget').addEventListener('click', () => {
-      const weathers = ['FIRE', 'y', 'CAUGHT IN A BAD ROMANCE', '🌈 Gay', 'meow', 'blurb'];
-      const randomWeather = weathers[Math.floor(Math.random() * weathers.length)];
-      document.getElementById('weather-widget').innerHTML = randomWeather;
-      showToast('Weather updated!');
-    });
-
-    document.getElementById('fortune-widget').addEventListener('click', () => {
-      const fortunes = [
-        'please never get bald!',
-        'good luch with your future!', 
-        'never give up girlboss',
-        'STREAM PRODUCT',
-        'nicki minaj is the queen of rap!',
-        'PLATFORM SHOES KICK SO HARD',
-        'you are a queen!',
-        'blurb',
-      ];
-      const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
-      document.getElementById('fortune-widget').innerHTML = randomFortune;
-      showToast('Fortune revealed!');
-    });
-
-    // Update clock every minute
-    setInterval(() => {
-      const now = new Date();
-      const time = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-      document.getElementById('clock-widget').innerHTML = `🕐 ${time}`;
-    }, 60000);
-
-    // Add zen particles continuously since zen mode is default
-    setInterval(() => {
-      if (!currentMode) { // Only when no other mode is active
-        createZenParticle(Math.random() * window.innerWidth, window.innerHeight);
-      }
-    }, 800);
-
-    // VGen helpful hint in console
-    console.log('%c🧷 Book commissions on VGen: vgen.co/mizitm001', 'color:#7C3AED;font-weight:bold;');
-    // Purple theme console message
-    console.log('%c hi its me miz', 'color: #8B5CF6; font-size: 20px; font-weight: bold;');
-    console.log('%c its so fun! 💫', 'color: #C084FC; font-size: 14px;');
-    console.log('%c arvo is a gay furry ewwww', 'color: #EC4899; font-size: 12px;');
-    console.log('%c theres a konami code btw ↑↑↓↓←→←→BA', 'color: #A855F7; font-size: 10px;');
   </script>
 </body>
 </html>
