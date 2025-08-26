@@ -2,20 +2,626 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-<title>wait</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>commissions • mitchie</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      display: flex;
-      height: 100vh;
+    * {
       margin: 0;
-      font-family: sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background: linear-gradient(135deg, #1a1f12, #2a2f1a, #1a1f12);
+      color: #e2e8f0;
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 4rem;
+      padding: 2rem 0;
+    }
+
+    .name {
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: #D4DE95;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      color: #BAC095;
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+
+    .nav {
+      display: flex;
       justify-content: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .nav-link {
+      color: #BAC095;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: #D4DE95;
+      border-color: #D4DE95;
+      background: rgba(212, 222, 149, 0.1);
+    }
+
+    .nav-link.active {
+      color: #D4DE95;
+      border-color: #D4DE95;
+      background: rgba(212, 222, 149, 0.1);
+    }
+
+    .content {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(212, 222, 149, 0.2);
+      border-radius: 12px;
+      padding: 2.5rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      color: #D4DE95;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      display: flex;
       align-items: center;
-      background-color: #FFFFFF
+      gap: 0.5rem;
+    }
+
+    .section-title::before {
+      content: '>';
+      color: #BAC095;
+      font-weight: 600;
+    }
+
+    .text {
+      color: #BAC095;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .text:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      color: #D4DE95;
+      font-weight: 500;
+    }
+
+    .link {
+      color: #D4DE95;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    .link:hover {
+      border-bottom-color: #D4DE95;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .pricing-card {
+      background: rgba(212, 222, 149, 0.1);
+      border: 1px solid rgba(212, 222, 149, 0.2);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .pricing-card:hover {
+      background: rgba(212, 222, 149, 0.15);
+      border-color: #D4DE95;
+      transform: translateY(-2px);
+    }
+
+    .pricing-title {
+      font-size: 1.2rem;
+      color: #D4DE95;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .pricing-amount {
+      font-size: 1.5rem;
+      color: #e2e8f0;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .pricing-description {
+      color: #BAC095;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .example-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .example-item {
+      background: rgba(212, 222, 149, 0.05);
+      border: 1px solid rgba(212, 222, 149, 0.2);
+      border-radius: 12px;
+      padding: 1rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .example-item:hover {
+      background: rgba(212, 222, 149, 0.1);
+      border-color: #D4DE95;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(212, 222, 149, 0.2);
+    }
+
+    .example-image {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid rgba(212, 222, 149, 0.3);
+      transition: all 0.3s ease;
+      margin-bottom: 1rem;
+    }
+
+    .example-image:hover {
+      border-color: #D4DE95;
+      transform: scale(1.02);
+    }
+
+    .example-label {
+      text-align: center;
+      color: #D4DE95;
+      font-weight: 500;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+
+    .contact-info {
+      background: rgba(212, 222, 149, 0.1);
+      border: 1px solid rgba(212, 222, 149, 0.2);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .contact-title {
+      font-size: 1.2rem;
+      color: #D4DE95;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .contact-details {
+      color: #BAC095;
+      line-height: 1.6;
+    }
+
+    .discord-handle {
+      color: #D4DE95;
+      font-weight: 500;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .floating-dots {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .dot {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: rgba(212, 222, 149, 0.3);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); opacity: 0.3; }
+      50% { transform: translateY(-20px); opacity: 0.8; }
+    }
+
+    .dot:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .dot:nth-child(2) { left: 20%; animation-delay: 1s; }
+    .dot:nth-child(3) { left: 30%; animation-delay: 2s; }
+    .dot:nth-child(4) { left: 40%; animation-delay: 3s; }
+    .dot:nth-child(5) { left: 50%; animation-delay: 4s; }
+    .dot:nth-child(6) { left: 60%; animation-delay: 5s; }
+    .dot:nth-child(7) { left: 70%; animation-delay: 0.5s; }
+    .dot:nth-child(8) { left: 80%; animation-delay: 1.5s; }
+    .dot:nth-child(9) { left: 90%; animation-delay: 2.5s; }
+
+    .cursor-glow {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: radial-gradient(circle, rgba(212, 222, 149, 0.3), transparent);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transition: all 0.1s ease;
+      mix-blend-mode: screen;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .name {
+        font-size: 2.5rem;
+      }
+      
+      .nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .content {
+        padding: 1.5rem;
+      }
+      
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>wait for a bit okay</h1>
+  <div class="floating-dots">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+
+  <div class="cursor-glow"></div>
+
+  <div class="container">
+    <header class="header">
+      <h1 class="name">mitchie</h1>
+      <p class="tagline">pdmm+ module commissions</p>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">about</a>
+        <a href="comms.html" class="nav-link active">commissions</a>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section class="section">
+        <h2 class="section-title">services</h2>
+        <p class="text">
+          I specialize in creating custom <span class="highlight">PDMM+ modules</span> for Project Diva. My work focuses on <span class="highlight">frankenmodules</span> - combining existing Project Diva models to create unique, personalized characters that bring your vision to life.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">pricing</h2>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <div class="pricing-title">frankenmodules</div>
+            <div class="pricing-amount">$10-$15+ USD</div>
+            <div class="pricing-description">
+              Complete module creation including slotting, rigging, and minor modeling for accessories or hair. Price varies based on complexity.
+            </div>
+          </div>
+          
+          <div class="pricing-card">
+            <div class="pricing-title">model ports</div>
+            <div class="pricing-amount">Free - $2 USD</div>
+            <div class="pricing-description">
+              Usually free for skinwrapping. Small fee ($1-2) for complex projects requiring additional work.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">example work</h2>
+        <div class="example-grid">
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/1.jpe" alt="PDMM+ module example 1" class="example-image">
+            <div class="example-label">Digital Stars 2021 Miku</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/3.jpe" alt="PDMM+ module example 3" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/4.jpe" alt="PDMM+ module example 4" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/5.jpe" alt="PDMM+ module example 5" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/6.jpe" alt="PDMM+ module example 6" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/7.jpe" alt="PDMM+ module example 7" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/8.jpe" alt="PDMM+ module example 8" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/9.jpe" alt="PDMM+ module example 9" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/10.jpe" alt="PDMM+ module example 10" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/11.jpe" alt="PDMM+ module example 11" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/12.jpe" alt="PDMM+ module example 12" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/13.jpe" alt="PDMM+ module example 13" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/14.jpe" alt="PDMM+ module example 14" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/15.jpe" alt="PDMM+ module example 15" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/16.jpe" alt="PDMM+ module example 16" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/17.jpe" alt="PDMM+ module example 17" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/18.jpe" alt="PDMM+ module example 18" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/19.jpe" alt="PDMM+ module example 19" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/20.jpe" alt="PDMM+ module example 20" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/21.jpe" alt="PDMM+ module example 21" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/22.jpe" alt="PDMM+ module example 22" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/23.jpe" alt="PDMM+ module example 23" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/24.jpe" alt="PDMM+ module example 24" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/25.jpe" alt="PDMM+ module example 25" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/26.jpe" alt="PDMM+ module example 26" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/27.jpe" alt="PDMM+ module example 27" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/28.jpe" alt="PDMM+ module example 28" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/29.jpe" alt="PDMM+ module example 29" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/30.jpe" alt="PDMM+ module example 30" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/31.jpe" alt="PDMM+ module example 31" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/32.jpe" alt="PDMM+ module example 32" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/33.jpe" alt="PDMM+ module example 33" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/34.jpe" alt="PDMM+ module example 34" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/35.jpe" alt="PDMM+ module example 35" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/36.jpe" alt="PDMM+ module example 36" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+          
+          <div class="example-item">
+            <img src="https://raw.githubusercontent.com/Michuxle/mizitm001space/refs/heads/main/images/37.jpe" alt="PDMM+ module example 37" class="example-image">
+            <div class="example-label">PDMM+ Module Example</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">important notes</h2>
+        <div class="text">
+          <strong>Frankenmodeling Approach:</strong> My modules are created using existing Project Diva models. I may model small accessories or hair modifications, but the core structure uses game assets. This keeps costs affordable while maintaining quality.
+        </div>
+        <div class="text">
+          <strong>Design Matching:</strong> Due to the frankenmodeling approach, modules may not match your reference design exactly. I work to get as close as possible while working within the constraints of available assets.
+        </div>
+        <div class="text">
+          <strong>Manual Modeling:</strong> I do not provide full manual modeling services. If you need completely custom models, I recommend contacting creators like Mekaio, Sangabc, Royer, Nada, and others in the PDM2 or MM+M servers.
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">payment & contact</h2>
+        <div class="contact-info">
+          <div class="contact-title">payment options</div>
+          <div class="contact-details">
+            • PayPal only<br>
+            • Full payment upfront<br>
+            • 50/50 split (half upfront, half on completion)
+          </div>
+        </div>
+        
+        <div class="contact-info">
+          <div class="contact-title">get in touch</div>
+          <div class="contact-details">
+            Ready to start your project? Contact me on Discord:<br>
+            <span class="discord-handle">mitumitu001</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Cursor glow effect
+    const cursorGlow = document.querySelector('.cursor-glow');
+    
+    document.addEventListener('mousemove', (e) => {
+      cursorGlow.style.left = e.clientX - 10 + 'px';
+      cursorGlow.style.top = e.clientY - 10 + 'px';
+    });
+
+    // Subtle hover effects for interactive elements
+    const interactiveElements = document.querySelectorAll('.nav-link, .pricing-card, .link, .example-image, .example-item');
+    
+    interactiveElements.forEach(element => {
+      element.addEventListener('mouseenter', () => {
+        cursorGlow.style.transform = 'scale(2)';
+        cursorGlow.style.background = 'radial-gradient(circle, rgba(212, 222, 149, 0.5), transparent)';
+      });
+      
+      element.addEventListener('mouseleave', () => {
+        cursorGlow.style.transform = 'scale(1)';
+        cursorGlow.style.background = 'radial-gradient(circle, rgba(212, 222, 149, 0.3), transparent)';
+      });
+    });
+
+    // Console welcome message
+    console.log('%ccomms', 'color: #D4DE95; font-size: 16px; font-weight: bold;');
+    console.log('%cyay', 'color: #BAC095; font-size: 14px;');
+  </script>
 </body>
 </html>
